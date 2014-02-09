@@ -1,6 +1,6 @@
 {
   "name": "compose-new",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Command line tools for rapid email development",
   "main": "index.js",
   "scripts": {
@@ -18,8 +18,12 @@
     "email",
     "marketing"
   ],
+  "bin" : "./index.js",
   "bugs": {
     "url": "https://github.com/tbuchok/compose-new/issues"
   },
-  "homepage": "https://github.com/tbuchok/compose-new"
+  "homepage": "https://github.com/tbuchok/compose-new",
+  "dependencies": {
+    "jade": "~1.1.5"
+  }
 }
