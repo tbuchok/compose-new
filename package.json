@@ -1,11 +1,25 @@
 {
   "name": "compose-new",
   "version": "0.0.0",
-  "description": "",
+  "description": "Command line tools for rapid email development",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tom Buchok <tom@buchok.com> (http://buchok.com/)",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tbuchok/compose-new.git"
+  },
+  "keywords": [
+    "email",
+    "html",
+    "email",
+    "marketing"
+  ],
+  "bugs": {
+    "url": "https://github.com/tbuchok/compose-new/issues"
+  },
+  "homepage": "https://github.com/tbuchok/compose-new"
 }
