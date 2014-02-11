@@ -1,9 +1,9 @@
 var jade = require('jade')
   , INCLUDES = [
-        'include ' + require('jade-email-doc').filepath
-      , 'include ' + require('jade-email-body').filepath
-      , 'include ' + require('jade-email-section').filepath
-      , 'include ' + require('jade-bulletproof-button').filepath
+        'include ' + require('/Users/tom/Documents/Hacker-School/jade-email-doc/index').filepath
+      , 'include ' + require('/Users/tom/Documents/Hacker-School/jade-email-body/index').filepath
+      , 'include ' + require('/Users/tom/Documents/Hacker-School/jade-email-section/index').filepath
+      , 'include ' + require('/Users/tom/Documents/Hacker-School/jade-bulletproof-button/index').filepath
       , '' // leave last index empty for final `\n`
     ]
   , options = {
