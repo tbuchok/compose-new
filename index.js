@@ -1,4 +1,6 @@
-var jade = require('jade')
+var fs = require('fs')
+  , jade = require('jade')
+  , juice = require('juice')
   , INCLUDES = [
         'include ' + require('/Users/tom/Documents/Hacker-School/jade-email-doc/index').filepath
       , 'include ' + require('/Users/tom/Documents/Hacker-School/jade-email-body/index').filepath
@@ -6,10 +8,6 @@ var jade = require('jade')
       , 'include ' + require('/Users/tom/Documents/Hacker-School/jade-bulletproof-button/index').filepath
       , '' // leave last index empty for final `\n`
     ]
-  , options = {
-        pretty: true
-      , basedir: '/'
-    }
   , buffer = new Buffer(INCLUDES.join('\n'))
 ;
 
@@ -18,9 +16,26 @@ var mkdir = function mkdir() {
 }
 
 var render = function render() {
+
+  var inline = function inline(html) {
+    var css = fs.readFileSync(process.cwd() + '/public/styles/screen.css').toString();
+    // var options = {
+    //     url: 'file:/' + process.cwd() + '/public'
+    //   , removeLinkTags: true
+    //   , removeStyleTags: false
+    // };
+    process.stdout.write(juice.inlineContent(html, css));
+  };
+
   var init = function init() {
-    var source = buffer.toString();
-    process.stdout.write(jade.render(source, options));
+    var source = buffer.toString()
+      , options = {
+          pretty: true
+        , basedir: '/'
+      }
+      , html = jade.render(source, options)
+    ;
+    inline(html);
   };
 
   process.stdin

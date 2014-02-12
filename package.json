@@ -18,12 +18,13 @@
     "email",
     "marketing"
   ],
-  "bin" : "./index.js",
+  "bin": "./index.js",
   "bugs": {
     "url": "https://github.com/tbuchok/compose-new/issues"
   },
   "homepage": "https://github.com/tbuchok/compose-new",
   "dependencies": {
-    "jade": "~1.1.5"
+    "jade": "~1.1.5",
+    "juice": "~0.4.0"
   }
 }
