@@ -19,11 +19,6 @@ var render = function render() {
 
   var inline = function inline(html) {
     var css = fs.readFileSync(process.cwd() + '/public/styles/screen.css').toString();
-    // var options = {
-    //     url: 'file:/' + process.cwd() + '/public'
-    //   , removeLinkTags: true
-    //   , removeStyleTags: false
-    // };
     process.stdout.write(juice.inlineContent(html, css));
   };
 
