@@ -11,15 +11,30 @@ var fs = require('fs')
   , buffer = new Buffer(INCLUDES.join('\n'))
 ;
 
+// return console.log(process.cwd());
+
 var mkdir = function mkdir() {
   console.error('directory mgmt not yet implemented!');
 }
 
 var render = function render() {
 
-  var inline = function inline(html) {
-    var css = fs.readFileSync(process.cwd() + '/public/styles/screen.css').toString();
-    process.stdout.write(juice.inlineContent(html, css));
+  var inline = function inline(html) {  
+    var stylesheet = process.cwd() + '/public/styles/screen.css';
+    fs.readFile(stylesheet, function(err, data) {
+      if (err)
+        throw err;
+      var options = {   url: stylesheet
+                      , removeStyleTags: false
+                      , extraCss: data.toString()
+                    };
+      juice.juiceContent(html, options, function(err, result) {
+        if (err)
+          throw err;
+        process.stdout.write(result);
+      });
+    });
+    // var css = fs.readFileSync(process.cwd() + '/public/styles/screen.css').toString();
   };
 
   var init = function init() {
