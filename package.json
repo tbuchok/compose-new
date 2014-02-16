@@ -25,6 +25,7 @@
   "homepage": "https://github.com/tbuchok/compose-new",
   "dependencies": {
     "jade": "~1.1.5",
-    "juice": "~0.4.0"
+    "juice": "~0.4.0",
+    "commander": "~2.1.0"
   }
 }
