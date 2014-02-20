@@ -1,5 +1,6 @@
 var ComposeNew = require('./lib/compose-new')
-  , server = require('./server')
+  , server = require('./lib/server')
+  , mkdir = require('./lib/mkdir')
   , program = require('commander')
   , package = require('./package.json')
 ;
@@ -13,6 +14,9 @@ program
 
 if (program.server)
   return server.init();
+
+if (program.create)
+  return mkdir.init();
 
 process.stdin
   .pipe(new ComposeNew)
