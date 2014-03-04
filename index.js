@@ -5,6 +5,9 @@ var ComposeNew = require('./lib/compose-new')
   , package = require('./package.json')
 ;
 
+if (require.main !== module)
+  return module.exports = ComposeNew;
+
 program
   .version(package.version)
   .option('-s, --server', 'start the server')
