@@ -25,7 +25,7 @@ if (program.create)
   return mkdir.init();
 
 if (program.build)
-  return build.init();
+  return build.init(program.data);
 
 process.stdin
   .pipe(new ComposeNew(program.data))
