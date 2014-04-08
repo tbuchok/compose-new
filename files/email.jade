@@ -1,0 +1,10 @@
+- DESKTOP_WIDTH = 640
+- MOBILE_WIDTH = 320
++doc
+  style.
+    @media (max-width: 480px) {
+      table[class='main'] {
+        width: #{MOBILE_WIDTH} !important;
+      }
+  +body
+    +section(width = DESKTOP_WIDTH).main
