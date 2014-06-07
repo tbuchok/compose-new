@@ -1,6 +1,6 @@
 {
   "name": "compose-new",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Command line tools for rapid email development",
   "main": "index.js",
   "scripts": {
